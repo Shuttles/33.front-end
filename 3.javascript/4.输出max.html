@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function maxNum() {
+            //获取两个文本框的值
+            var x = document.getElementById("num1").value;
+            var y = document.getElementById("num2").value;
+            //强制转换为数值型
+            x = parseFloat(x);
+            y = parseFloat(y);
+            ans = x > y ? x : y;
+            alert("最大数是：" + ans);
+        }
+    </script>
+</head>
+<body>
+        第一个数是：<input type="text" id="num1"/><br/>
+        第二个数是：<input type="text" id="num2"/><br/>
+        <input type="button" onclick="maxNum()" value="计算"/>
+</body>
+</html>
