@@ -368,3 +368,21 @@
      + alert()仅有提示文字，没有返回值
      + confirm()具有提示文字，返回”bool“值
      + prompt()具有提示文字，返回”字符串“
+
+
+
+## 5.2document对象
+
+1. 顾名思义，document对象操作的都是==html文档==。
+
+2. document对象时window对象的子对象。
+
+3. 对象属性
+
+   ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gjcco8srljj313w0rgafi.jpg)
+
+4. 对象方法
+
+   ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gjccoo2aadj31600d441q.jpg)
+
+   
