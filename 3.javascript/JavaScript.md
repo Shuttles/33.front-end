@@ -385,4 +385,224 @@
 
    ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gjccoo2aadj31600d441q.jpg)
 
+
+
+
+
+# 6.文档对象模型DOM(重要)
+
+## 6.1简介
+
+1. DOM，全称”`Document Object Model`“，即==文档对象模型==，是由W3C组织定义的一个标准。
+
+2. 在前端开发时，我们往往需要在页面某个地方添加或删除一个元素，这种操作就是通过DOM来实现的。
+
+   说白了，DOM就是一个借口，我们可以通过DOM来***<u>操作页面中各种元素</u>***。
+
+3. DOM结构
+
+   + DOM采用树形结构作为分层结构，以***<u>树节点</u>***形式表示页面中各种元素或内容。
+   + 在DOM中，***<u>每一个元素看成一个节点，而每一个节点就是一个”对象“。</u>***也就是我们在操作元素时，把每一个元素节点看成一个==对象==，然后***<u>使用这个对象的属性和方法进行相关操作</u>***。(这句话对理解DOM操作太重要了！)
+
+
+
+
+
+## 6.2DOM对象节点属性
+
+1. 概述
+
+   ![img](https://wx1.sinaimg.cn/mw690/005LasY6ly1gjdpamgmgzj31bo0li43y.jpg)
+
+
+
+
+
+## 6.3DOM对象节点方法
+
+1. 概述
+
+2. 获取指定元素
+
+   ```javascript
+   getElementById();
+   getElementsByName();
+   ```
+
+3. 创建节点
+
+   ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gjdpjo6mblj31kk0fkgpx.jpg)
+
+4. 插入节点
+
+   + appendChild()
+
+     把新的节点插入到当前节点的”内部“
+
+   + insertBefore()
+
+     把新的节点插入到当前结点的”末尾“
+
+5. 删除节点
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6ly1gjdptardm9j31i609ata3.jpg)
+
+6. 复制节点
+
+   ![img](https://wx3.sinaimg.cn/mw690/005LasY6ly1gjdpuvz54gj312o0ju0vw.jpg)
+
+7. 替换节点
+
+   ![img](https://wx4.sinaimg.cn/mw690/005LasY6ly1gjdpw8fk6fj316c0l0414.jpg)
+
+8. innerHTML和innerText
+
+   + 在JavaScript中，我们可以使用innerHTML和innerText这2个属性很方便地获取和设置某一个元素内部子元素或文本。
+
+   + innerHTML属性声明了元素含有的HTML文本，不包括元素本身的开始标记和结束标记。设置该属性可以用于为指定的HTML文本替换元素的内容。
+
+   + innerText属性与inerHTML属性的功能类似，只是该属性只能声明元素包含的文本内容。即使指定的是HTML文本，它也会认为是普通文本而原样输出。
+
+   + 区别
+
+     ![img](https://wx3.sinaimg.cn/mw690/005LasY6ly1gjdq47f039j31qa0gqq7p.jpg)
+
+
+
+## 6.4js操作css样式
+
+1. 概述
+
+   ![img](https://wx3.sinaimg.cn/mw690/005LasY6ly1gjdq6t4hg2j319o0u0k1f.jpg)
+
    
+
+
+
+# 7.JavaScript事件(精髓)
+
+## 7.1事件调用方式
+
+1. ***<u>在script标签中调用</u>***
+
+   + 语法
+
+     ```javascript
+     //语法
+     var 变量名 = document.getElementById("元素id");//获取某个元素，并赋值给某个变量
+     变量名.事件处理器 = function() {
+         ...
+     }
+     ```
+
+   + 例子
+
+     ```html
+     <body>
+         <input id="btn" type="button" value="提交" />
+         <script type="text/javascipt">
+         	var e = document.getElementById("btn");
+         	e.onclick = function() {
+         		alert("绿叶学习网");
+         	}
+         </script>
+     </body>
+     ```
+
+     
+
+2. ***<u>在元素中调用</u>***
+
+   + 就是在元素的某一属性(==即事件属性==)中直接编写js程序
+
+   + 例子
+
+     ```html
+     <!-- 例子1-->
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+         <title></title>
+     </head>
+     <body>
+         <input type="button" onclick="alert('绿叶学习网')" value="按钮"/>
+     <body>
+     </html>
+         
+     <!-- 例子2-->
+     <!DOCTYPE html>
+     <html xmlns="http://www.w3.org/1999/xhtml">
+     <head>
+         <title></title>
+         <script type="text/javascript">
+             function alertMessage()
+             {
+                 alert("绿叶学习网");
+             }
+         </script>
+     </head>
+     <body>
+         <input type="button" onclick="alertMessage()" value="按钮"/>
+     <body>
+     </html>
+     ```
+
+3. 区别：
+
+   第2种方法不需要使用getElementById()等方法来获取DOM，然后才调用函数或方法。因为它是直接在JavaScript元素中调用的。
+
+
+
+
+
+## 7.2鼠标事件
+
+1. 概述
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6ly1gjdnkmspndj30yw0jwtbz.jpg)
+
+2. ***<u>任何元素我们都可以为它添加单击事件！</u>***
+
+
+
+## 7.3键盘事件
+
+1. 概述
+
+   ![img](https://wx1.sinaimg.cn/mw690/005LasY6ly1gjdocecoclj31bu0mcq8b.jpg)
+
+
+
+## 7.4表单事件
+
+1. 概述
+
+   ![img](https://wx2.sinaimg.cn/mw690/005LasY6ly1gjdolpef98j310m0dugna.jpg)
+
+
+
+## 7.5编辑事件
+
+1. 常见的编辑事件有3种：
+   + 复制事件`oncopy`
+   + 剪切事件`oncut`
+   + 粘贴事件`onpaste`
+
+
+
+
+
+## 7.6页面相关事件
+
+1. 常用的页面相关事件共有3种：
+
+   + onload(加载事件)
+   + onresize(页面大小事件)
+   + onerror(出错事件)
+
+2. 实现语法
+
+   ```javascript
+   window.通用事件名 = 要执行的js代码；
+   ```
+
